@@ -1,0 +1,36 @@
+def babylonian_square_root(S, Xo):
+    # Inisialisasi variabel
+    Xn = Xo
+    error_tolerance = 0.0001
+    iteration = 0
+
+    # Membuat header tabel
+    print("Iterasi\tXn\t\tError")
+
+    while True:
+        # Menghitung nilai berikutnya menggunakan rumus Babylonian Square-Root
+        Xn1 = 0.5 * (Xn + S / Xn)
+
+        # Menghitung tingkat galat
+        error = abs(Xn1 - Xn)
+
+        # Menampilkan hasil iterasi dalam bentuk tabel
+        print(f"{iteration}\t{Xn:.5f}\t{error:.5f}")
+
+        # Cek apakah tingkat galat sudah cukup kecil
+        if error < error_tolerance:
+            break
+
+        # Update nilai Xn untuk iterasi berikutnya
+        Xn = Xn1
+        iteration += 1
+
+    return Xn
+
+# Input nilai S dan Xo
+S = float(input("Masukkan nilai S (angka yang akan dicari akarnya): "))
+Xo = float(input("Masukkan nilai Xo (initial guess): "))
+
+# Panggil fungsi babylonian_square_root
+hasil_akar = babylonian_square_root(S, Xo)
+print(f"Akar dari {S} adalah {hasil_akar:.5f}")
