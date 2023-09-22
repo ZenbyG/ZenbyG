@@ -1,3 +1,8 @@
+#Program ini dibuat pada bahasa Python
+#jadi buat file yang berekstensi 'py'. contoh: main.py
+
+
+
 def babylonian_square_root(S, Xo):
     # Inisialisasi variabel
     Xn = Xo
